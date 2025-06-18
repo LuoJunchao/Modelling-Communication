@@ -1,0 +1,14 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  workflow:
+    uses: Intelligent-Curtain-Wall/.workflows/.github/workflows/ci-cd-pipeline.yml@main
+    with:
+      image-tag: modeling-communication
+    secrets:
+      WORKFLOW_PRIVATE_KEY: ${{ secrets.WORKFLOW_PRIVATE_KEY }}
